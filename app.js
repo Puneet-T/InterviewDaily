@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _=require("lodash");
 
-const homeStartingContent = "An interview is a structured conversation where one participant asks questions, and the other provides answers. Preparing for interviews can be a tedious job to do ,after all it isnt easy to keep up with all the trends ,ranging from  attire to academics .The Interview Daily blog helps you in this,each week experts from varios domains write an article which can help you crack top companies.You can also contribute to this blog and help your friends by sharing your experiences";   
+const homeStartingContent = "An interview is a structured conversation where one participant asks questions, and the other provides answers. Preparing for interviews can be a tedious job to do ,after all it isnt easy to keep up with all the trends ,ranging from  attire to academics .The Interview Daily blog helps you in this,each week experts from varios domains write an article which can help you crack top companies.You can also contribute to this blog and help your friends by sharing your experiences";
 const aboutContent = "I am a 4th year student of TIET patiala ,you can tell others about this blog if you like it";
 const contactContent = "For any queries,complaints,suggestions contact at my e-mail:puneett2001@gmail.com";
 
@@ -59,12 +59,15 @@ app.get("/posts/:postName",function(req,res){
 
 
 
+let port=process.env.PORT;
+if(port==null||port==""){
+  port=3000;
+}
 
 
 
 
 
-
-app.listen(3000, function() {
-  console.log("Server started on port 3000");
+app.listen(port, function() {
+  console.log("Server started sucessfully!");
 });
